@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Digital Twin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">🧬</div>
+            <div>
+                <strong>Digital Twin</strong>
+                <small>Personal Intelligence</small>
+            </div>
+        </div>
+
+        <nav>
+            <button class="nav-btn active" data-page="dashboard">⌂ Dashboard</button>
+            <button class="nav-btn" data-page="identity">◉ Identity</button>
+            <button class="nav-btn" data-page="memory">🧠 Memory</button>
+            <button class="nav-btn" data-page="knowledge">📚 Knowledge</button>
+            <button class="nav-btn" data-page="activity">⚡ Activity</button>
+            <button class="nav-btn" data-page="decisions">⚖ Decision</button>
+            <button class="nav-btn" data-page="simulation">🔬 Simulation</button>
+            <button class="nav-btn" data-page="relationships">🔗 Relationships</button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <span class="status-dot"></span>
+            Twin Local Aktif
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <div>
+                <h1 id="pageTitle">Dashboard</h1>
+                <p id="pageSubtitle">Pusat Personal Digital Twin</p>
+            </div>
+
+            <div class="top-status">
+                <span class="status-dot"></span>
+                Sistem Aktif
+            </div>
+        </header>
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="page active">
+
+            <div class="hero">
+                <div>
+                    <span class="eyebrow">PERSONAL DIGITAL TWIN</span>
+                    <h2 id="heroName">Digital Twin Anda</h2>
+                    <p>
+                        Sistem digital yang menyatukan identitas, memori,
+                        pengetahuan, aktivitas, konteks, reasoning dan simulasi.
+                    </p>
+                </div>
+
+                <div class="hero-icon">🧬</div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span>Memory</span>
+                    <strong id="statMemory">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Knowledge</span>
+                    <strong id="statKnowledge">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Activity</span>
+                    <strong id="statActivity">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Decision</span>
+                    <strong id="statDecision">0</strong>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+
+                <div class="panel">
+                    <div class="panel-title">
+                        <h3>💬 Berinteraksi dengan Twin</h3>
+                    </div>
+
+                    <div id="chatMessages" class="chat-messages">
+                        <div class="message twin">
+                            <strong>Digital Twin</strong>
+                            <p>
+                                Saya siap membantu memahami informasi
+                                yang tersimpan dalam sistem Anda.
+                            </p>
+                        </div>
+                    </div>
+
+                    <form id="chatForm" class="chat-form">
+                        <input
+                            id="chatInput"
+                            type="text"
+                            placeholder="Tulis sesuatu kepada Digital Twin..."
+                            autocomplete="off"
+                        >
+                        <button type="submit">Kirim</button>
+                    </form>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-title">
+                        <h3>🎯 Tujuan Aktif</h3>
+                    </div>
+
+                    <div id="goalList" class="simple-list"></div>
+
+                    <form id="goalForm" class="inline-form">
+                        <input id="goalInput" type="text" placeholder="Tambah tujuan...">
+                        <button type="submit">+</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>🧠 Ringkasan Twin</h3>
+                </div>
+                <div id="twinSummary" class="summary-box"></div>
+            </div>
+
+        </section>
+
+        <!-- IDENTITY -->
+        <section id="identity" class="page">
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>◉ Identity</h3>
+                    <span>Identitas Digital</span>
+                </div>
+
+                <form id="identityForm" class="form-grid">
+
+                    <label>
+                        Nama
+                        <input id="identityName" type="text">
+                    </label>
+
+                    <label>
+                        Pekerjaan / Peran
+                        <input id="identityRole" type="text">
+                    </label>
+
+                    <label>
+                        Keahlian
+                        <input id="identitySkills" type="text"
+                               placeholder="contoh: bisnis, coding, marketing">
+                    </label>
+
+                    <label>
+                        Minat
+                        <input id="identityInterests" type="text"
+                               placeholder="contoh: AI, teknologi, bisnis">
+                    </label>
+
+                    <label class="full">
+                        Preferensi
+                        <textarea id="identityPreferences"
+                                  placeholder="Cara kerja, gaya belajar, preferensi keputusan, dll."></textarea>
+                    </label>
+
+                    <label class="full">
+                        Nilai / Prinsip
+                        <textarea id="identityValues"
+                                  placeholder="Prinsip yang penting bagi Anda"></textarea>
+                    </label>
+
+                    <button class="primary full" type="submit">
+                        Simpan Identity
+                    </button>
+
+                </form>
+            </div>
+
+        </section>
+
+        <!-- MEMORY -->
+        <section id="memory" class="page">
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>🧠 Memory</h3>
+                    <span>Memori jangka panjang</span>
+                </div>
+
+                <form id="memoryForm" class="form-grid">
+
+                    <label class="full">
+                        Isi Memory
+                        <textarea id="memoryContent"
+                                  placeholder="Masukkan informasi yang ingin diingat Twin..."></textarea>
+                    </label>
+
+                    <label>
+                        Tipe
+                        <select id="memoryType">
+                            <option value="fact">Fakta</option>
+                            <option value="experience">Pengalaman</option>
+                            <option value="preference">Preferensi</option>
+                            <option value="decision">Keputusan</option>
+                            <option value="goal">Tujuan</option>
+                            <option value="note">Catatan</option>
+                        </select>
+                    </label>
+
+                    <button class="primary" type="submit">
+                        Simpan Memory
+                    </button>
+
+                </form>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>Memory Tersimpan</h3>
+                    <input id="memorySearch" class="search-input"
+                           placeholder="Cari memory...">
+                </div>
+
+                <div id="memoryList" class="record-list"></div>
+            </div>
+
+        </section>
+
+        <!-- KNOWLEDGE -->
+        <section id="knowledge" class="page">
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>📚 Knowledge</h3>
+                    <span>Pengetahuan pribadi</span>
+                </div>
+
+                <form id="knowledgeForm" class="form-grid">
+
+                    <label>
+                        Judul
+                        <input id="knowledgeTitle" type="text">
+                    </label>
+
+                    <label>
+                        Kategori
+                        <input id="knowledgeCategory" type="text"
+                               placeholder="bisnis, AI, coding, dll.">
+                    </label>
+
+                    <label class="full">
+                        Isi Pengetahuan
+                        <textarea id="knowledgeContent"></textarea>
+                    </label>
+
+                    <button class="primary full" type="submit">
+                        Simpan Knowledge
+                    </button>
+
+                </form>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>Knowledge Base</h3>
+                    <input id="knowledgeSearch" class="search-input"
+                           placeholder="Cari knowledge...">
+                </div>
+
+                <div id="knowledgeList" class="record-list"></div>
+            </div>
+
+        </section>
+
+        <!-- ACTIVITY -->
+        <section id="activity" class="page">
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>⚡ Activity</h3>
+                    <span>Riwayat aktivitas</span>
+                </div>
+
+                <form id="activityForm" class="form-grid">
+
+                    <label>
+                        Aktivitas
+                        <input id="activityTitle" type="text">
+                    </label>
+
+                    <label>
+                        Kategori
+                        <input id="activityCategory" type="text"
+                               placeholder="belajar, kerja, riset...">
+                    </label>
+
+                    <label class="full">
+                        Detail
+                        <textarea id="activityDetail"></textarea>
+                    </label>
+
+                    <button class="primary full" type="submit">
+                        Catat Aktivitas
+                    </button>
+
+                </form>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>Riwayat Aktivitas</h3>
+                </div>
+
+                <div id="activityList" class="record-list"></div>
+            </div>
+
+        </section>
+
+        <!-- DECISIONS -->
+        <section id="decisions" class="page">
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>⚖ Decision Engine</h3>
+                    <span>Analisis keputusan</span>
+                </div>
+
+                <form id="decisionForm">
+
+                    <label>
+                        Keputusan yang ingin dianalisis
+                        <textarea id="decisionQuestion"
+                                  placeholder="Contoh: Apakah saya perlu mempelajari teknologi baru ini?"></textarea>
+                    </label>
+
+                    <button class="primary" type="submit">
+                        Analisis Keputusan
+                    </button>
+
+                </form>
+
+                <div id="decisionResult" class="analysis-result hidden"></div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>Riwayat Decision</h3>
+                </div>
+
+                <div id="decisionList" class="record-list"></div>
+            </div>
+
+        </section>
+
+        <!-- SIMULATION -->
+        <section id="simulation" class="page">
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>🔬 Simulation Engine</h3>
+                    <span>Simulasi skenario</span>
+                </div>
+
+                <form id="simulationForm" class="form-grid">
+
+                    <label class="full">
+                        Situasi
+                        <textarea id="simulationSituation"
+                                  placeholder="Apa yang sedang Anda hadapi?"></textarea>
+                    </label>
+
+                    <label>
+                        Skenario A
+                        <textarea id="scenarioA"></textarea>
+                    </label>
+
+                    <label>
+                        Skenario B
+                        <textarea id="scenarioB"></textarea>
+                    </label>
+
+                    <button class="primary full" type="submit">
+                        Jalankan Simulation
+                    </button>
+
+                </form>
+
+                <div id="simulationResult" class="analysis-result hidden"></div>
+            </div>
+
+        </section>
+
+        <!-- RELATIONSHIPS -->
+        <section id="relationships" class="page">
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>🔗 Relationship Graph</h3>
+                    <span>Hubungan pengetahuan</span>
+                </div>
+
+                <form id="relationshipForm" class="form-grid">
+
+                    <label>
+                        Entitas A
+                        <input id="relationFrom" type="text">
+                    </label>
+
+                    <label>
+                        Hubungan
+                        <input id="relationType" type="text"
+                               placeholder="mempelajari, memiliki, mengerjakan...">
+                    </label>
+
+                    <label>
+                        Entitas B
+                        <input id="relationTo" type="text">
+                    </label>
+
+                    <button class="primary full" type="submit">
+                        Simpan Relationship
+                    </button>
+
+                </form>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">
+                    <h3>Relationship Map</h3>
+                </div>
+
+                <div id="relationshipList" class="record-list"></div>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="database.js"></script>
+<script src="memory.js"></script>
+<script src="twin.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
